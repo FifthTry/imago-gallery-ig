@@ -49,8 +49,9 @@ list-title-copy: $list-tc
 
 FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
 
--- slideshow: Continous Translation
+\-- slideshow: Continous Translation
 list-title-copy: $list-tc
 
 FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
 ```
+
