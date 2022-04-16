@@ -150,7 +150,7 @@ margin-bottom: 18
 
 --- ftd.text:
 text: $body
-role: $fpm.type.body-small
+role: $fpm.type.body-medium
 color: $fpm.color.main.text
 margin-bottom: 30
 
@@ -205,6 +205,7 @@ boolean mouse-in: false
 --- ftd.row:
 width: 36
 margin-right: 20
+margin-top: 7
 
 --- ftd.image:
 if: $mouse-in
@@ -238,7 +239,7 @@ anchor: parent
 width: 1
 height: percent 110
 left: -38
-top: 3
+top: 10
 background-color: $fpm.color.main.text-strong
 open: false
 z-index: 0
@@ -252,7 +253,7 @@ width: fill
 --- ftd.column:
 
 --- ftd.text: $copy
-role: $fpm.type.body-small
+role: $fpm.type.body-medium
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
