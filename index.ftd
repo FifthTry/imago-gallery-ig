@@ -1,1 +1,258 @@
--- ft.page: hello
+-- import: fifthtry.github.io/slideshow/assets
+-- import: fpm
+-- import: fifthtry.github.io/inter/assets as font-assets
+-- import: fifthtry.github.io/typography as tf
+-- import: fifthtry.github.io/package-doc/doc as pd
+
+-- fpm.font-display: $font-assets.fonts.Inter
+
+
+-- boolean is-mobile: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+
+-- integer image-hover: 1
+
+-- record tc:
+caption title:
+body body:
+integer index:
+boolean is-last:
+
+-- tc list list-tc:
+
+-- list-tc: Commit to the process
+index: 1
+is-last: false
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+
+-- list-tc: Own the changes
+index: 2
+is-last: false
+
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+
+-- list-tc: Deploy when everything’s ready
+index: 3
+is-last: true
+
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+
+
+
+
+
+
+
+-- ftd.column:
+width: fill
+padding-horizontal: 50
+padding-horizontal if $is-mobile: 20
+
+-- pd.package: Slideshow
+name: fifthtry.github.io/slideshow
+
+This component can be used as a slideshow component on your page.
+
+
+-- pd.component: Slideshow
+name: fifthtry.github.io/show.slideshow
+
+This is the main slideshow.
+
+
+-- pd.hidden-code: List of items
+
+
+\-- record tc:
+caption title:
+body body:
+integer index:
+boolean is-last:
+
+\-- tc list list-tc:
+
+\-- list-tc: Commit to the process
+index: 1
+is-last: false
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+
+\-- list-tc: Own the changes
+index: 2
+is-last: false
+
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+
+\-- list-tc: Deploy when everything’s ready
+index: 3
+is-last: true
+
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+
+
+-- pd.output: Basic usage example
+reference: $assets.files.assets.slideshow-demo.png
+reference-width: fill
+
+\-- slideshow: Continous Translation
+list-title-copy: $list-tc
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+
+-- slideshow: Continous Translation
+list-title-copy: $list-tc
+
+FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slideshow:
+caption title:
+optional ftd.image-src image-1: $assets.files.assets.images.slide-show-image-1.png
+optional ftd.image-src image-2: $assets.files.assets.images.slide-show-image-2.png
+optional ftd.image-src image-3: $assets.files.assets.images.slide-show-image-3.png
+optional body body:
+optional ftd.color bg-color: $fpm.color.main.background.step-1
+optional string title-copy:
+tc list list-title-copy:
+width: fill
+background-color: $bg-color
+padding-vertical: 70
+padding-horizontal: 48
+
+--- ftd.column:
+width: percent 35
+id: left-section
+padding-right: 45
+
+--- ftd.text: $title
+width: fill
+role: $fpm.type.title-large
+color: $fpm.color.main.text-strong
+margin-bottom: 18
+
+--- ftd.text:
+text: $body
+role: $fpm.type.body-large
+color: $fpm.color.main.text
+margin-bottom: 30
+
+--- list-loop:
+$loop$: $list-title-copy as $obj
+title: $obj.title
+copy: $obj.body
+index: $obj.index
+is-last: $obj.is-last
+
+--- container: ftd.main
+
+--- ftd.row:
+width: percent 65
+id: right-section
+margin-top: 90
+
+--- ftd.image:
+if: $image-hover == 1
+src: $image-1
+width: fill
+
+--- ftd.image:
+if: $image-hover == 2
+src: $image-2
+width: fill
+
+--- ftd.image:
+if: $image-hover == 3
+src: $image-3
+width: fill
+
+
+
+
+
+
+
+
+
+
+-- ftd.row list-loop:
+string title:
+string copy:
+ftd.color text-color: $fpm.color.main.text
+ftd.color text-hover: $fpm.color.main.text-strong
+integer index:
+boolean is-last:
+width: fill
+boolean mouse-in: false
+
+--- ftd.row:
+width: 36
+margin-right: 20
+
+--- ftd.image:
+if: $mouse-in
+src: $assets.files.assets.images.list-bullet-hover.png
+width: 36
+height: 36
+border-radius: 500
+z-index: 10
+
+--- ftd.image:
+if: not $mouse-in
+src: $assets.files.assets.images.list-bullet.png
+width: 36
+height: 36
+border-radius: 500
+z-index: 10
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+spacing: 8
+margin-bottom: 8
+$on-mouse-enter$: $image-hover = $index
+$on-mouse-enter$: $mouse-in = true
+$on-mouse-leave$: $mouse-in = false
+
+--- ftd.row:
+if: not $is-last
+anchor: parent
+width: 1
+height: percent 110
+left: -38
+top: 3
+background-color: $fpm.color.main.text-strong
+open: false
+z-index: 0
+
+--- ftd.text: $title
+role: $fpm.type.headline-large
+color: $text-color
+color if $mouse-in: $text-hover 
+width: fill
+
+--- ftd.column:
+
+--- ftd.text: $copy
+role: $fpm.type.body-large
+color: $text-color
+color if $mouse-in: $text-hover 
+width: fill
