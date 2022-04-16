@@ -150,7 +150,7 @@ margin-bottom: 18
 
 --- ftd.text:
 text: $body
-role: $fpm.type.body-large
+role: $fpm.type.body-small
 color: $fpm.color.main.text
 margin-bottom: 30
 
@@ -252,7 +252,7 @@ width: fill
 --- ftd.column:
 
 --- ftd.text: $copy
-role: $fpm.type.body-large
+role: $fpm.type.body-small
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
