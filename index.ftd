@@ -144,7 +144,7 @@ padding-right: 45
 
 --- ftd.text: $title
 width: fill
-role: $fpm.type.title-large
+role: $fpm.type.headline-large
 color: $fpm.color.main.text-strong
 margin-bottom: 18
 
@@ -244,7 +244,7 @@ open: false
 z-index: 0
 
 --- ftd.text: $title
-role: $fpm.type.headline-large
+role: $fpm.type.headline-medium
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
