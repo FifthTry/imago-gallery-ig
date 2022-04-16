@@ -3,7 +3,7 @@
 Package name: Slideshow
 URL: fifthtry.github.io/slideshow
 
-This component can be used as a slideshow component on your page.
+This component can be used as a slideshow component on your page to showcase your achievements etc.
 
 Usage:
 
