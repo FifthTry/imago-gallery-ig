@@ -53,6 +53,7 @@ FifthTry has a review based workflow for documentation, just like Github Pull Re
 width: fill
 padding-horizontal: 50
 padding-horizontal if $is-mobile: 20
+background-color: $fpm.color.main.background.base
 
 -- pd.package: Slideshow
 name: fifthtry.github.io/slideshow
