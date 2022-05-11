@@ -27,21 +27,21 @@ boolean is-last:
 index: 1
 is-last: false
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 -- list-tc: Own the changes
 index: 2
 is-last: false
 
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+FifthTry has a review based workflow for documentation, just like Github Pull Request.
 
 -- list-tc: Deploy when everything’s ready
 index: 3
 is-last: true
 
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 
 
@@ -82,21 +82,21 @@ boolean is-last:
 index: 1
 is-last: false
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+FifthTry has a review based workflow for documentation, just like Github Pull Request.
 
 \-- list-tc: Own the changes
 index: 2
 is-last: false
 
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation
+FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 \-- list-tc: Deploy when everything’s ready
 index: 3
 is-last: true
 
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+FifthTry has a review based workflow for documentation, just like Github Pull Request.
 
 
 -- pd.output: Basic usage example
@@ -106,12 +106,12 @@ reference-width: fill
 \-- slideshow: Continous Translation
 list-title-copy: $list-tc
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 -- slideshow: Continous Translation
 list-title-copy: $list-tc
 
-FifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.
+FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 
 
@@ -246,7 +246,7 @@ open: false
 z-index: 0
 
 --- ftd.text: $title
-role: $fpm.type.heading-medium
+role: $fpm.type.heading-small
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
