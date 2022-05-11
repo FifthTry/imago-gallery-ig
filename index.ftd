@@ -144,13 +144,13 @@ padding-right: 45
 
 --- ftd.text: $title
 width: fill
-role: $fpm.type.headline-large
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 margin-bottom: 18
 
 --- ftd.text:
 text: $body
-role: $fpm.type.body-medium
+role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 30
 
@@ -245,7 +245,7 @@ open: false
 z-index: 0
 
 --- ftd.text: $title
-role: $fpm.type.headline-medium
+role: $fpm.type.heading-medium
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
@@ -253,7 +253,7 @@ width: fill
 --- ftd.column:
 
 --- ftd.text: $copy
-role: $fpm.type.body-medium
+role: $fpm.type.copy-relaxed
 color: $text-color
 color if $mouse-in: $text-hover 
 width: fill
