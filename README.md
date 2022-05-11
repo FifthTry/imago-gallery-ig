@@ -1,4 +1,4 @@
-# Slideshow
+# FTD - Slideshow
 
 Package name: Slideshow
 URL: fifthtry.github.io/slideshow
