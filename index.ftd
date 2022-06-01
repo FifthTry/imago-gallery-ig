@@ -3,8 +3,45 @@
 -- import: fifthtry.github.io/inter/assets as font-assets
 -- import: fifthtry.github.io/typography as tf
 -- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fifthtry.github.io/octicon as octicons
 
 -- fpm.font-display: $font-assets.fonts.Inter
+
+
+-- ftd.font-size list-bd:
+line-height: 20
+size: 14
+letter-spacing: 0
+
+-- ftd.type list-body: $fpm.font-display
+desktop: $list-bd
+mobile: $list-bd
+xl: $list-bd
+weight: 400
+
+
+-- ftd.font-size list-tit:
+line-height: 36
+size: 24
+letter-spacing: 0
+
+-- ftd.type list-title: $fpm.font-display
+desktop: $list-tit
+mobile: $list-tit
+xl: $list-tit
+weight: 700
+
+-- ftd.font-size section-t:
+line-height: 44
+size: 32
+letter-spacing: 0
+
+-- ftd.type section-title: $fpm.font-display
+desktop: $section-t
+mobile: $section-t
+xl: $section-t
+weight: 700
+
 
 
 -- boolean is-mobile: false
@@ -19,18 +56,21 @@ if: $ftd.device == mobile
 caption title:
 body body:
 integer index:
+ftd.image-src thumbnail:
 boolean is-last:
 
 -- tc list list-tc:
 
 -- list-tc: Commit to the process
 index: 1
+thumbnail: $assets.files.assets.images.slide-show-image-1.png
 is-last: false
 
 FifthTry has a review based workflow for documentation, just like Github Pull Request. 
 
 -- list-tc: Own the changes
 index: 2
+thumbnail: $assets.files.assets.images.slide-show-image-2.png
 is-last: false
 
 
@@ -38,6 +78,7 @@ FifthTry has a review based workflow for documentation, just like Github Pull Re
 
 -- list-tc: Deploy when everything’s ready
 index: 3
+thumbnail: $assets.files.assets.images.slide-show-image-3.png
 is-last: true
 
 
@@ -116,42 +157,62 @@ FifthTry has a review based workflow for documentation, just like Github Pull Re
 
 
 
-
-
-
-
-
-
-
-
 -- ftd.row slideshow:
 caption title:
-optional ftd.image-src image-1: $assets.files.assets.images.slide-show-image-1.png
-optional ftd.image-src image-2: $assets.files.assets.images.slide-show-image-2.png
-optional ftd.image-src image-3: $assets.files.assets.images.slide-show-image-3.png
 optional body body:
 optional ftd.color bg-color: $fpm.color.main.background.step-1
 optional string title-copy:
 tc list list-title-copy:
 width: fill
 background-color: $bg-color
+
+
+--- slideshow-desktop: $title
+if: not $is-mobile
+body: $body
+bg-color: $bg-color
+title-copy: $title-copy
+list-title-copy: $list-title-copy
+
+
+--- slideshow-mobile: $title
+if: $is-mobile
+body: $body
+bg-color: $bg-color
+title-copy: $title-copy
+list-title-copy: $list-title-copy
+
+
+
+
+-- ftd.row slideshow-desktop:
+caption title:
+optional body body:
+optional ftd.color bg-color:
+optional string title-copy:
+tc list list-title-copy:
+width: fill
 padding-vertical: 70
 padding-horizontal: 48
 
---- ftd.column:
-width: percent 35
+
+--- ftd.row:
+width: percent 30
 id: left-section
 padding-right: 45
 
+--- ftd.column:
+width: fill
+
 --- ftd.text: $title
 width: fill
-role: $fpm.type.heading-large
+role: $section-title
 color: $fpm.color.main.text-strong
 margin-bottom: 18
 
 --- ftd.text:
 text: $body
-role: $fpm.type.copy-relaxed
+role: $list-body
 color: $fpm.color.main.text
 margin-bottom: 30
 
@@ -162,6 +223,9 @@ copy: $obj.body
 index: $obj.index
 is-last: $obj.is-last
 
+
+
+
 --- container: ftd.main
 
 --- ftd.row:
@@ -169,24 +233,146 @@ width: percent 65
 id: right-section
 margin-top: 90
 
+--- list-loop-image:
+$loop$: $list-title-copy as $obj
+thumbnail: $obj.thumbnail
+index: $obj.index
+
+
+-- ftd.row list-loop-image:
+ftd.image-src thumbnail:
+integer index:
+
 --- ftd.image:
-if: $image-hover == 1
-src: $image-1
+if: $image-hover == $index 
+src: $thumbnail
+width: fill
+
+
+
+
+
+
+
+
+
+
+-- ftd.column slideshow-mobile:
+caption title:
+optional body body:
+optional ftd.color bg-color:
+optional string title-copy:
+tc list list-title-copy:
+width: fill
+padding-vertical: 24
+padding-horizontal: 16
+margin-bottom: 44
+spacing: 16
+
+
+--- ftd.column:
+width: fill
+align: center
+
+--- ftd.row:
+width: fill
+align: center
+
+--- ftd.text: $title
+width: fill
+text-align: center
+role: $section-title
+color: $fpm.color.main.text-strong
+
+
+--- container: ftd.main
+
+--- ftd.text:
+width: fill
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+
+--- container: ftd.main
+
+
+--- ftd.row:
+width: fill
+overflow-x: auto
+spacing: 20
+
+--- list-loop-mobile:
+$loop$: $list-title-copy as $obj
+thumbnail: $obj.thumbnail
+title: $obj.title
+copy: $obj.body
+index: $obj.index
+is-last: $obj.is-last
+
+-- ftd.column list-loop-mobile:
+string title:
+string copy:
+ftd.image-src thumbnail:
+ftd.color text-color: $fpm.color.main.text
+ftd.color text-hover: $fpm.color.main.text-strong
+integer index:
+boolean is-last:
+width: fill
+boolean mouse-in: false
+z-index: 0
+spacing: 24
+margin-bottom: $fpm.space.space-6
+
+
+--- ftd.text: $title
+role: $list-title
+color: $fpm.color.main.text
+width: fill
+min-height: 72
+
+--- ftd.row:
 width: fill
 
 --- ftd.image:
-if: $image-hover == 2
-src: $image-2
+src: $thumbnail
+width: 250
+height: 200
+
+
+--- container: ftd.main
+
+
+--- ftd.text: $copy
+role: $fpm.type.copy-tight
+color: $text-color
+width: fill
+min-height: 80
+
+--- container: ftd.main
+
+--- ftd.column:
+id: moving-container
 width: fill
 
---- ftd.image:
-if: $image-hover == 3
-src: $image-3
-width: fill
+--- ftd.row:
+align: center
+if: not $is-last
 
 
+--- octicons.arrow-right:
+color: $fpm.color.main.text-strong
 
 
+--- container:moving-container
+
+
+--- ftd.row:
+align: center
+if: $is-last
+
+--- octicons.arrow-left:
+color: $fpm.color.main.text-strong
 
 
 
@@ -202,11 +388,11 @@ integer index:
 boolean is-last:
 width: fill
 boolean mouse-in: false
+z-index: 0
 
 --- ftd.row:
 width: 36
 margin-right: 20
-margin-top: 7
 
 --- ftd.image:
 if: $mouse-in
@@ -240,21 +426,22 @@ anchor: parent
 width: 1
 height: percent 110
 left: -38
-top: 10
+top: 3
 background-color: $fpm.color.main.text-strong
 open: false
 z-index: 0
 
 --- ftd.text: $title
-role: $fpm.type.heading-small
+role: $list-title
 color: $text-color
-color if $mouse-in: $text-hover 
+color if $mouse-in: $text-hover
 width: fill
 
 --- ftd.column:
 
 --- ftd.text: $copy
-role: $fpm.type.copy-relaxed
+role: $list-body
 color: $text-color
-color if $mouse-in: $text-hover 
+color if $mouse-in: $text-hover
 width: fill
+
