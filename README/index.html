@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title>README.ftd</title>
         <script type="ftd" id="ftd-data">{
-  "fifthtry.github.io/slideshow/README#content@0": {
+  "fifthtry.github.io/slideshow/README/#content@0": {
     "value": "# FTD - Slideshow\n\nPackage name: Slideshow\nURL: fifthtry.github.io/slideshow\n\nThis component can be used as a slideshow component on your page to showcase your achievements etc.\n\nUsage:\n\nHow to define list of slideshow items e.g.\n\n```ftd\n\n-- record tc:\ncaption title:\nbody body:\ninteger index:\nboolean is-last:\n\n-- tc list list-tc:\n\n-- list-tc: Commit to the process\nindex: 1\nis-last: false\n\nFifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation\n\n-- list-tc: Own the changes\nindex: 2\nis-last: false\n\n\nFifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation\n\n-- list-tc: Deploy when everything’s ready\nindex: 3\nis-last: true\n\n\nFifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.\n\n\nBasic usage example\nreference: $assets.files.assets.slideshow-demo.png\nreference-width: fill\n\n-- slideshow: Continous Translation\nlist-title-copy: $list-tc\n\nFifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.\n\n-- slideshow: Continous Translation\nlist-title-copy: $list-tc\n\nFifthTry has a review based workflow for documentation, just like Github Pull Request. Instead of directly editing documents, FifthTry users can create change requests to implement changes to documentation.\n```",
     "dependencies": {
       "0": [
@@ -88,15 +88,37 @@ ul {
     margin: 10px 0;
 }
 
-.ft_md h1,
-.ft_md h2,
-.ft_md h3,
-.ft_md h4,
+.ft_md h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52px;
+    color: #ffffff;
+}
+
+.ft_md h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #ffffff;
+}
+
+.ft_md h3 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44px;
+    color: #ffffff;
+}
+
+.ft_md h4 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #ffffff;
+}
+
 .ft_md h5 {
-    margin-top: 34px;
-    margin-bottom: 0;
     line-height: 1.2em;
-    color: #000000;
+    color: #ffffff;
 }
 
 .ft_md ul ul,
@@ -569,6 +591,12 @@ font-weight: 900;
 src: url(-/fifthtry.github.io/inter/static/Inter-900-normal-latin.woff2) format('woff2');
 font-family: fifthtry-github-io-inter-Inter }
 
+
+@font-face { font-display: swap;
+font-style: normal;
+font-weight: normal;
+src: url(-/fifthtry.github.io/octicon/static/octicons.woff) format('woff');
+font-family: fifthtry-github-io-octicon-Octicon }
 
 </style>
         <script>
