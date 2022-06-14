@@ -9,6 +9,15 @@ Usage:
 
 [Click here to see demo](https://fifthtry.github.io/slideshow/)
 
+How to use this package?
+- add below lines into `FPM.ftd` file:
+
+```ftd
+-- fpm.dependency: fifthtry.github.io/slideshow
+-- fpm.auto-import: fifthtry.github.io/slideshow
+```
+
+
 How to define list of slideshow items e.g.
 
 ```ftd
