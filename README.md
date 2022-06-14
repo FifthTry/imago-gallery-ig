@@ -7,6 +7,8 @@ This component can be used as a slideshow component on your page to showcase you
 
 Usage:
 
+<a href="fifthtry.github.io/slideshow" target="_blank">Click here to see demo</a>
+
 How to define list of slideshow items e.g.
 
 ```ftd
