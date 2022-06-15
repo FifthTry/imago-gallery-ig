@@ -4,6 +4,7 @@
 -- import: fifthtry.github.io/typography as tf
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/octicon as octicons
+-- import: fifthtry.github.io/package-doc/code-block as cb
 
 -- fpm.font-display: $font-assets.fonts.Inter
 
@@ -106,6 +107,18 @@ This component can be used as a slideshow component on your page.
 name: fifthtry.github.io/show.slideshow
 
 This is the main slideshow.
+
+How to use?
+
+Add below lines into `FPM.ftd` file:
+
+
+-- cb.code:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/slideshow as slideshow
+
+\-- fpm.auto-import: slideshow
 
 
 -- pd.hidden-code: List of items
