@@ -53,6 +53,12 @@ if: $ftd.device == mobile
 
 -- integer image-hover: 1
 
+-- boolean first: true
+
+-- boolean middle: false
+
+-- boolean last: false
+
 -- record tc:
 caption title:
 body body:
@@ -457,4 +463,558 @@ role: $list-body
 color: $text-color
 color if $mouse-in: $text-hover
 width: fill
+
+
+
+-- ftd.column slide:
+caption title:
+width: fill
+background-color: $fpm.color.main.background.base
+padding-vertical: 48
+padding-horizontal: 24
+open: true
+append-at: profile
+
+--- ftd.text: $title
+role: $fpm.type.heading-medium
+style: bold
+align: center
+margin-bottom: $fpm.space.space-6
+
+--- container: ftd.main
+
+--- ftd.row:
+id: profile
+
+--- container: ftd.main
+
+--- ftd.row:
+id: change-container
+spacing: 12
+bottom: 10
+bottom if $is-mobile: 5
+left if not $is-mobile: 498
+left if $is-mobile: 116
+anchor: parent
+z-index: 1000
+
+--- ftd.row:
+padding-vertical: $fpm.space.space-1
+padding-horizontal: $fpm.space.space-1
+border-radius: 100
+background-color: $fpm.color.main.text-strong
+margin-top: $fpm.space.space-1
+$on-click$: $last = false
+background-color if $first == true: $fpm.color.main.background.step-2
+$on-click$: $middle = false
+$on-click$: $first = true
+width: fill
+
+--- container: change-container
+
+--- ftd.row:
+padding-vertical: $fpm.space.space-1
+padding-horizontal: $fpm.space.space-1
+border-radius: 100
+background-color: $fpm.color.main.text-strong
+margin-top: $fpm.space.space-1
+$on-click$: $last = false
+background-color if $middle == true: $fpm.color.main.background.step-2
+$on-click$: $first = false
+$on-click$: $middle = true
+
+--- container: change-container
+
+--- ftd.row:
+padding-vertical: $fpm.space.space-1
+padding-horizontal: $fpm.space.space-1
+border-radius: 100
+background-color: $fpm.color.main.text-strong
+background-color if $last == true: $fpm.color.main.background.step-2
+margin-top: $fpm.space.space-1
+$on-click$: $last = true
+$on-click$: $first = false
+$on-click$: $middle = false
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-one:
+if: $first
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+
+--- slide-one-desktop: $title
+if: not $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+--- container: ftd.main
+
+--- slide-one-mobile: $title
+if: $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-one-desktop:
+if: $first
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 287
+spacing: 32
+
+--- ftd.column:
+id: switch
+spacing: 12
+width: percent 50
+align: center
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  12
+border-bottom: 2
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+--- ftd.image:
+src: $src
+width: percent 50
+height: 287
+
+
+
+
+
+
+
+
+
+
+-- ftd.column slide-one-mobile:
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 380
+spacing: 12
+
+--- ftd.image:
+src: $src
+width: fill
+height: 204
+
+--- container: ftd.main
+
+--- ftd.column:
+id: switch
+width: fill
+
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  16
+border-bottom: 2
+padding-bottom: 8
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+margin-top: 12
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+margin-top: 12
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-two:
+if: $middle
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+
+--- slide-two-desktop:$title
+if:not $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+--- slide-two-mobile:$title
+if: $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-two-desktop:
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 287
+
+--- ftd.column:
+shadow-offset-x: 2
+shadow-offset-y: 0
+shadow-size: 2
+shadow-blur: 38
+shadow-color: $fpm.color.main.background.base
+width: percent 50
+height: 287
+z-index: 99
+
+--- ftd.row:
+height: fill
+width: fill
+
+--- ftd.column:
+align: center
+spacing: 12
+id: switch
+width: fill
+
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  12
+border-bottom: 2
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+--- ftd.image:
+src: $src
+width: percent 50
+height: 287
+
+
+
+
+
+
+
+
+
+
+-- ftd.column slide-two-mobile:
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 380
+spacing: 12
+
+--- ftd.image:
+src: $src
+width: fill
+height: 204
+
+--- container: ftd.main
+
+--- ftd.column:
+shadow-offset-x: 0
+shadow-offset-y: -14
+shadow-size: 2
+shadow-blur: 38
+shadow-color: $fpm.color.main.background.base
+width: fill
+z-index: 99
+
+--- ftd.column:
+align: center
+spacing: 12
+id: switch
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  12
+border-bottom: 2
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-three:
+if: $last
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+
+--- slide-three-desktop:$title
+if: not $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+--- slide-three-mobile:$title
+if: $is-mobile
+subtitle: $subtitle
+body: $body
+src: $src
+
+
+
+
+
+
+
+
+
+
+-- ftd.row slide-three-desktop:
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 287
+
+--- ftd.column:
+shadow-offset-x: 12
+shadow-offset-y: 0
+shadow-size: 2
+shadow-blur: 38
+shadow-color: $fpm.color.main.background.base
+width: percent 50
+height: 287
+z-index: 99
+
+--- ftd.row:
+height: fill
+width: fill
+
+--- ftd.column:
+align: center
+spacing: 12
+id: switch
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  12
+border-bottom: 2
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+--- ftd.image:
+src: $src
+width: percent 50
+height: 287
+
+
+
+
+
+
+
+
+
+
+-- ftd.column slide-three-mobile:
+caption title:
+string subtitle:
+body body:
+ftd.image-src src:
+width: fill
+height: 380
+spacing: 12
+
+--- ftd.image:
+src: $src
+width: fill
+height: 204
+
+--- container: ftd.main
+
+--- ftd.column:
+id: switch
+shadow-offset-x: 0
+shadow-offset-y: -56
+shadow-size: 2
+shadow-blur: 38
+shadow-color: $fpm.color.main.background.base
+width: fill
+z-index: 99
+
+--- ftd.text: $title
+role: $fpm.type.label-big
+style: semi-bold
+padding-bottom: 4
+color: $fpm.color.main.text
+border-color: $fpm.color.main.text
+
+--- ftd.row:
+anchor: parent
+width: 32
+border-color: $fpm.color.main.text-strong
+top:  20
+border-bottom: 2
+padding-bottom: 4
+left: 0
+
+--- container: switch
+
+--- ftd.text: $subtitle
+role: $fpm.type.heading-large
+style: semi-bold
+color: $fpm.color.main.text
+margin-top: 12
+
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+margin-top: 12
+
 

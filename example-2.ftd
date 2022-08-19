@@ -1,0 +1,114 @@
+-- import: fifthtry.github.io/slideshow as slideshow
+-- import: fifthtry.github.io/slideshow/assets
+-- import: fpm
+-- import: fifthtry.github.io/typography as tf
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fifthtry.github.io/package-doc/code-block as cb
+
+-- ftd.column:
+width: fill
+padding-horizontal: 50
+padding-horizontal if $slideshow.is-mobile: 20
+background-color: $fpm.color.main.background.base
+
+-- pd.package: Slideshow
+name: fifthtry.github.io/slideshow
+
+This component can be used as a slideshow component on your page.
+
+
+-- pd.component: Example-2
+name: fifthtry.github.io/slideshow
+
+This is the main slideshow.
+
+How to use?
+
+Add below lines into `FPM.ftd` file:
+
+
+-- cb.code:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/slideshow as slideshow
+
+\-- fpm.auto-import: slideshow
+
+
+-- pd.hidden-code: List of slide
+
+
+\-- slideshow.slide: Lorem ipsum dolor sit amet
+
+\--- slideshow.slide-one: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua .
+
+\--- slideshow.slide-two: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. 
+
+\--- slideshow.slide-three: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua.
+
+
+-- pd.output: Basic usage example
+reference: $assets.files.assets.slideshow-demo.png
+reference-width: fill
+
+\-- slideshow.slide: Lorem ipsum dolor sit amet
+
+\--- slideshow.slide-one: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua .
+
+\--- slideshow.slide-two: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. 
+
+\--- slideshow.slide-three: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua.
+
+
+-- slideshow.slide: Lorem ipsum dolor sit amet
+
+--- slideshow.slide-one: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua .
+
+--- slideshow.slide-two: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. 
+
+--- slideshow.slide-three: Lorem ipsum 
+subtitle: Lorem ipsum 
+src: $assets.files.image-placeholder.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua.
