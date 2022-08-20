@@ -466,7 +466,7 @@ width: fill
 
 
 
--- ftd.column slide:
+-- ftd.column imagen-gallery-ig:
 caption title:
 width: fill
 background-color: $fpm.color.main.background.base
@@ -545,7 +545,7 @@ $on-click$: $middle = false
 
 
 
--- ftd.row slide-one:
+-- ftd.row imagen-gallery-ig-one:
 if: $first
 caption title:
 string subtitle:
@@ -553,7 +553,7 @@ body body:
 ftd.image-src src:
 width: fill
 
---- slide-one-desktop: $title
+--- imagen-gallery-ig-one-desktop: $title
 if: not $is-mobile
 subtitle: $subtitle
 body: $body
@@ -561,7 +561,7 @@ src: $src
 
 --- container: ftd.main
 
---- slide-one-mobile: $title
+--- imagen-gallery-ig-one-mobile: $title
 if: $is-mobile
 subtitle: $subtitle
 body: $body
@@ -577,7 +577,7 @@ src: $src
 
 
 
--- ftd.row slide-one-desktop:
+-- ftd.row imagen-gallery-ig-one-desktop:
 if: $first
 caption title:
 string subtitle:
@@ -636,7 +636,7 @@ height: 287
 
 
 
--- ftd.column slide-one-mobile:
+-- ftd.column imagen-gallery-ig-one-mobile:
 caption title:
 string subtitle:
 body body:
@@ -695,20 +695,20 @@ margin-top: 12
 
 
 
--- ftd.row slide-two:
+-- ftd.row imagen-gallery-ig-two:
 if: $middle
 caption title:
 string subtitle:
 body body:
 ftd.image-src src:
 
---- slide-two-desktop:$title
+--- imagen-gallery-ig-two-desktop:$title
 if:not $is-mobile
 subtitle: $subtitle
 body: $body
 src: $src
 
---- slide-two-mobile:$title
+--- imagen-gallery-ig-two-mobile:$title
 if: $is-mobile
 subtitle: $subtitle
 body: $body
@@ -723,7 +723,7 @@ src: $src
 
 
 
--- ftd.row slide-two-desktop:
+-- ftd.row imagen-gallery-ig-two-desktop:
 caption title:
 string subtitle:
 body body:
@@ -795,7 +795,7 @@ height: 287
 
 
 
--- ftd.column slide-two-mobile:
+-- ftd.column imagen-gallery-ig-two-mobile:
 caption title:
 string subtitle:
 body body:
@@ -862,20 +862,20 @@ color: $fpm.color.main.text
 
 
 
--- ftd.row slide-three:
+-- ftd.row imagen-gallery-ig-three:
 if: $last
 caption title:
 string subtitle:
 body body:
 ftd.image-src src:
 
---- slide-three-desktop:$title
+--- imagen-gallery-ig-three-desktop:$title
 if: not $is-mobile
 subtitle: $subtitle
 body: $body
 src: $src
 
---- slide-three-mobile:$title
+--- imagen-gallery-ig-three-mobile:$title
 if: $is-mobile
 subtitle: $subtitle
 body: $body
@@ -890,7 +890,7 @@ src: $src
 
 
 
--- ftd.row slide-three-desktop:
+-- ftd.row imagen-gallery-ig-three-desktop:
 caption title:
 string subtitle:
 body body:
@@ -960,7 +960,7 @@ height: 287
 
 
 
--- ftd.column slide-three-mobile:
+-- ftd.column imagen-gallery-ig-three-mobile:
 caption title:
 string subtitle:
 body body:
