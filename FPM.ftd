@@ -9,3 +9,4 @@ base: https://raw.githubusercontent.com/fifthtry/imago-gallery-ig/main
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
 -- fpm.dependency: fifthtry.github.io/typography as tf
 -- fpm.dependency: fifthtry.github.io/octicon 
+
